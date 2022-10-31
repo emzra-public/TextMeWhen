@@ -10,7 +10,7 @@ export default function EventForm() {
   const [timeError, setTimeError] = useState("");
   const eventMutator = trpc.event.createEventData.useMutation();
 
-  const handleEventSubmit = (e) => {
+  const handleEventSubmit = (e: any) => {
     e.preventDefault();
     if (name.length > 0 && date.length > 0 && time.length > 0) {
       setNameError("");

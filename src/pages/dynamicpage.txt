@@ -2,12 +2,15 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import path from "path";
 import fs from "fs/promises";
-import PhoneNumberInput from "../../components/places/PhoneNumberInput";
+import PhoneNumberInput from "../components/PhoneNumberInput";
+import { trpc } from "../utils/trpc";
+const eventMutator = trpc.event.createNumberData.useMutation();
 
 interface starInterface {
   eventName: string;
   eventDate: string;
   eventTime: string;
+  number: string;
 }
 async function getData() {
   const filePath = path.join(
@@ -82,9 +85,8 @@ const ProjectPage = (props: {
         {props.specificStarData.eventDate} at {props.specificStarData.eventTime}
       </p>
       <div className="flex flex-row justify-center">
-      <PhoneNumberInput></PhoneNumberInput>
+        <PhoneNumberInput></PhoneNumberInput>
       </div>
-      
     </section>
   );
 };

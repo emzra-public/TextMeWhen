@@ -7,11 +7,11 @@ export default function PhoneNumberInput() {
   const [eventId, setEventId] = useState(1);
   const phoneNumberMutator = trpc.event.createNumberData.useMutation();
 
-  const handlePhoneNumberChange = (e) => {
+  const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
   };
 
-  const handlePhoneNumberSubmit = (e) => {
+  const handlePhoneNumberSubmit = (e: any) => {
     if (phoneNumber.length === 10) {
       console.log("phoneNumber", phoneNumber);
       setPhoneNumberError("");

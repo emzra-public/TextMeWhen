@@ -1,9 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import PhoneNumberInput from "../components/PhoneNumberInput";
 import EventForm from "../components/EventForm";
-import TechnologyCard from "../components/TechCards";
-import { trpc } from "../utils/trpc";
 
 // make api requests:
 // export default function IndexPage() {
