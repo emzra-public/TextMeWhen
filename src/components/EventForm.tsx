@@ -43,7 +43,7 @@ export default function EventForm() {
         {nameError && <p className="mt-2 text-sm text-red-600">{nameError}</p>}
       </div>
 
-      <div className="mt-6 mb-6 flex flex-col items-center justify-center gap-y-6 gap-x-4">
+      <div className="mt-10 mb-6 flex flex-col items-center justify-center gap-y-6 gap-x-4">
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <svg
