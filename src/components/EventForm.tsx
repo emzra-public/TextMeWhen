@@ -8,6 +8,7 @@ export default function EventForm() {
   const [dateError, setDateError] = useState("");
   const [time, setTime] = useState("");
   const [timeError, setTimeError] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
   const eventMutator = trpc.event.createEventData.useMutation();
 
   const handleEventSubmit = (e: any) => {
@@ -20,6 +21,12 @@ export default function EventForm() {
         time: time,
       });
       console.log(name);
+      setName("");
+      setDate("");
+      setTime("");
+      setSuccessMsg(
+        "Successfully pushed to DB! We will soon have functionality to create your own opt-in page."
+      );
     } else if (name.length === 0) {
       setNameError("Please enter a name for your event");
     } else if (date.length === 0) {
@@ -92,6 +99,9 @@ export default function EventForm() {
           >
             Submit
           </button>
+          {successMsg && (
+            <p className="mt-2 text-sm text-red-600">{successMsg}</p>
+          )}
         </div>
       </div>
     </>
