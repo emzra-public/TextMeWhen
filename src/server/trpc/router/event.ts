@@ -25,7 +25,7 @@ export const eventRouter = router({
     )
     .mutation( async ({ input, ctx }) => {
       // Operation to run 
-      ctx.prisma.event.create({
+     await ctx.prisma.event.create({
         data: {
           name: input.name,
           date: input.date,
