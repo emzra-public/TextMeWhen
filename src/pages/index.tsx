@@ -36,6 +36,7 @@ const Home: NextPage = () => {
         <div>
           <EventForm></EventForm>
         </div>
+        <p className="text-gray-700"></p>
       </main>
     </>
   );

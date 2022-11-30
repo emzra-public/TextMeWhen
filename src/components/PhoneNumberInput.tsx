@@ -1,24 +1,37 @@
 import { useState } from "react";
 import { trpc } from "../utils/trpc";
 
-export default function PhoneNumberInput() {
+export function PhoneNumberInput({ eventId }: { eventId: number }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState("");
-  const [eventId, setEventId] = useState(1);
+  const [successMsg, setSuccessMsg] = useState("");
   const phoneNumberMutator = trpc.event.createNumberData.useMutation();
 
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
   };
 
-  const handlePhoneNumberSubmit = (e: any) => {
-    if (phoneNumber.length === 10) {
+  const handlePhoneNumberSubmit = () => {
+    if (phoneNumber.length === 10 && !isNaN(Number(phoneNumber))) {
       console.log("phoneNumber", phoneNumber);
       setPhoneNumberError("");
-      phoneNumberMutator.mutate({
-        phoneNumber: phoneNumber,
-        eventId: eventId,
-      });
+      phoneNumberMutator.mutate(
+        {
+          phoneNumber,
+          eventId,
+        },
+        {
+          onSuccess: () => {
+            setSuccessMsg(
+              `Your phone number has been added to the event! You will receive a text message when the event starts.`
+            );
+          },
+          onError: (error) => {
+            console.log("error", error);
+          },
+        }
+      );
+      setPhoneNumber("");
       console.log(phoneNumber);
     } else {
       setPhoneNumberError("Please enter a valid phone number");
@@ -45,6 +58,7 @@ export default function PhoneNumberInput() {
           type="text"
           name="phone-number"
           id="phone-number"
+          value={phoneNumber}
           onChange={handlePhoneNumberChange}
           className="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           placeholder="+1 (555) 987-6543"
@@ -60,6 +74,13 @@ export default function PhoneNumberInput() {
       >
         Submit
       </button>
+      <div>
+        {successMsg ? (
+          <p className="mt-2 text-sm text-red-600">{successMsg}</p>
+        ) : null}
+      </div>
     </div>
   );
 }
+
+export default PhoneNumberInput;

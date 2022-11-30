@@ -15,18 +15,25 @@ export default function EventForm() {
     e.preventDefault();
     if (name.length > 0 && date.length > 0 && time.length > 0) {
       setNameError("");
-      eventMutator.mutateAsync({
-        name: name,
-        date: date,
-        time: time,
-      });
+      eventMutator.mutateAsync(
+        {
+          name: name,
+          date: date,
+          time: time,
+        },
+        {
+          onSuccess: (data) => {
+            setSuccessMsg(
+              `Your event page has been created! You can find it at https://textmewhen.com/${data.id}`
+            );
+          },
+        }
+      );
+
       console.log(name);
       setName("");
       setDate("");
       setTime("");
-      setSuccessMsg(
-        "We will soon have functionality to create your own opt-in page."
-      );
     } else if (name.length === 0) {
       setNameError("Please enter a name for your event");
     } else if (date.length === 0) {

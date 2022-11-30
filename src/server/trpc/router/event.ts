@@ -1,20 +1,9 @@
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 import { router, publicProcedure } from "../trpc";
 
 export const eventRouter = router({
-  getAllEvents: publicProcedure
-    .input(
-      z.object({
-         text: z.string().nullish() 
-        }).nullish()
-      )
-    .query(({ input }) => {
-      // operation to run 
-      return {
-        greeting: `Hello ${input?.text ?? "world"}`,
-      };
-    }),
   createEventData: publicProcedure
     .input(
       z.object({
@@ -23,17 +12,35 @@ export const eventRouter = router({
         time: z.string(),
       })
     )
-    .mutation( async ({ input, ctx }) => {
-      // Operation to run 
-     await ctx.prisma.event.create({
+    .mutation(async ({ input, ctx }) => {
+      return await ctx.prisma.event.create({
         data: {
           name: input.name,
           date: input.date,
           time: input.time,
         },
+      });
+    }),
+  getEventData: publicProcedure
+    .input(
+      z.object({
+        id: z.number(),
       })
-    }
-  ),
+    )
+    .query(async ({ ctx, input }) => {
+      try {
+        return await ctx.prisma.event.findUnique({
+          where: {
+            id: input.id,
+          },
+        });
+      } catch (err) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Something went wrong",
+        });
+      }
+    }),
   createNumberData: publicProcedure
     .input(
       z.object({
@@ -41,20 +48,23 @@ export const eventRouter = router({
         phoneNumber: z.string(),
       })
     )
-    .mutation(({ input, ctx }) => {
-      // Operation to run 
-      // add phone number to phoneNumbers array in event 
-      ctx.prisma.event.update({
-        where: {
-          id: input.eventId,
-        },
-        data: {
-          phoneNumbers: {
-            push: input.phoneNumber,
+    .mutation(async ({ input, ctx }) => {
+      try {
+        await ctx.prisma.event.update({
+          where: {
+            id: input.eventId,
           },
-        },
-      })
-      console.log("phone number added to event")
-    }
-  ),
+          data: {
+            phoneNumbers: {
+              push: input.phoneNumber,
+            },
+          },
+        });
+      } catch (err) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Something went wrong",
+        });
+      }
+    }),
 });
