@@ -1,22 +1,34 @@
-import { z } from "zod";
-
+import { env } from "../../../env/server.mjs";
 import { router, publicProcedure } from "../trpc";
+import { Twilio } from "twilio";
+import { z } from "zod";
+import { TRPCError } from "@trpc/server";
 
 export const twilioRouter = router({
-  hello: publicProcedure
-    .query(() => {
-      // const number = '+19499223891'
-      // const message = 'Hello from Twilio!'
-      const result = fetch('https://su23x43w4abmhyznvmqaiuakam0muocc.lambda-url.us-west-2.on.aws', )
-        // {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({ number:number, message:message }),
-        //   }
-        // )
-      return result
+  schedule: publicProcedure
+    .input(
+      z.object({
+        eventId: z.number(),
+        phoneNumber: z.string(),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      const twilio = new Twilio(env.TWILIO_ACCOUNT_SID, env.TWILIO_AUTH_TOKEN);
+      const event = await ctx.prisma.event.findUnique({
+        where: {
+          id: input.eventId,
+        },
+      });
+      if (!event) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "Event not found",
+        });
+      }
     }),
-
 });
+
+// form input -> db
+// dynamic event page from db
+// twilio router from db
+// that data -> twilio api (client.messages.create)

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import twilio from "twilio";
 import { trpc } from "../utils/trpc";
 
 export function PhoneNumberInput({ eventId }: { eventId: number }) {
@@ -6,6 +7,7 @@ export function PhoneNumberInput({ eventId }: { eventId: number }) {
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const phoneNumberMutator = trpc.event.createNumberData.useMutation();
+  const twilioQuery = trpc.twilio.schedule.useQuery;
 
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
@@ -20,6 +22,7 @@ export function PhoneNumberInput({ eventId }: { eventId: number }) {
           phoneNumber,
           eventId,
         },
+
         {
           onSuccess: () => {
             setSuccessMsg(

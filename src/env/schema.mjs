@@ -18,6 +18,10 @@ export const serverSchema = z.object({
   ),
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
+  TWILIO_ACCOUNT_SID: z.string(),
+  TWILIO_AUTH_TOKEN: z.string(),
+  TWILIO_NUMBER: z.string(),
+  TWILIO_MESSAGING_SERVICE_SID: z.string(),
 });
 
 /**
