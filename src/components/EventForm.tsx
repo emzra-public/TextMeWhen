@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { sendEtagResponse } from "next/dist/server/send-payload";
+import { useEffect, useState } from "react";
 import { trpc } from "../utils/trpc";
 
 export default function EventForm() {
@@ -9,10 +10,10 @@ export default function EventForm() {
   const [time, setTime] = useState("");
   const [timeError, setTimeError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const eventMutator = trpc.event.createEventData.useMutation();
 
   const handleEventSubmit = (e: any) => {
-    e.preventDefault();
     if (name.length > 0 && date.length > 0 && time.length > 0) {
       setNameError("");
       eventMutator.mutateAsync(
@@ -23,14 +24,18 @@ export default function EventForm() {
         },
         {
           onSuccess: (data) => {
+            setErrorMsg("");
             setSuccessMsg(
               `Your event page has been created! You can find it at https://textmewhen.vercel.app/${data.id}`
             );
           },
+          onError: (error) => {
+            setSuccessMsg("");
+            setErrorMsg("There was an error. Please try again.");
+          },
         }
       );
 
-      console.log(name);
       setName("");
       setDate("");
       setTime("");
@@ -42,6 +47,7 @@ export default function EventForm() {
       setTimeError("Please enter a time for your event");
     }
   };
+
   return (
     <>
       <div className="flex flex-col items-center justify-center">
@@ -81,7 +87,7 @@ export default function EventForm() {
               type="date"
               className="text-white-900 block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 sm:text-sm"
               value={date}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => setDate(e.target.value as string)}
             ></input>
             {dateError && (
               <p className="mt-2 text-sm text-red-600">{dateError}</p>
@@ -94,7 +100,7 @@ export default function EventForm() {
             <input
               type="time"
               value={time}
-              onChange={(e) => setTime(e.target.value)}
+              onChange={(e) => setTime(e.target.value as string)}
               required
             ></input>
             {timeError && (
@@ -113,8 +119,9 @@ export default function EventForm() {
         </div>
         <div>
           {successMsg && (
-            <p className="mt-2 text-sm text-red-600">{successMsg}</p>
+            <p className="mt-2 text-sm text-green-600">{successMsg}</p>
           )}
+          {errorMsg && <p className="mt-2 text-sm text-red-600">{errorMsg}</p>}
         </div>
       </div>
     </>

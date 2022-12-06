@@ -25,7 +25,7 @@ function EventData({ id }: { id: number }) {
         {event.date} at {event.time}
       </p>
       <div className="flex flex-row justify-center">
-        <PhoneNumberInput eventId={event.id}></PhoneNumberInput>
+        <PhoneNumberInput event={event} />
       </div>
     </section>
   );

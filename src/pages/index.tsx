@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           Scheduled Text Delivery and Opt-In Page Hosting
         </p>
         <div>
-          <EventForm></EventForm>
+          <EventForm />
         </div>
         <p className="text-gray-700"></p>
       </main>

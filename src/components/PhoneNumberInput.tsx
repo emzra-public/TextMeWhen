@@ -1,13 +1,13 @@
+import { Event } from "@prisma/client";
 import { useState } from "react";
-import twilio from "twilio";
 import { trpc } from "../utils/trpc";
 
-export function PhoneNumberInput({ eventId }: { eventId: number }) {
+export function PhoneNumberInput({ event }: { event: Event }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const phoneNumberMutator = trpc.event.createNumberData.useMutation();
-  const twilioMutator = trpc.twilio.schedule.useMutation();
 
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
@@ -20,17 +20,20 @@ export function PhoneNumberInput({ eventId }: { eventId: number }) {
       phoneNumberMutator.mutate(
         {
           phoneNumber,
-          eventId,
+          eventId: event.id,
+          datetime: new Date(event.date + " " + event.time),
         },
 
         {
           onSuccess: () => {
+            setErrorMsg("");
             setSuccessMsg(
               `Your phone number has been added to the event! You will receive a text message when the event starts.`
             );
           },
           onError: (error) => {
-            console.log("error", error);
+            setSuccessMsg("");
+            setErrorMsg("There was an error. Please try again.");
           },
         }
       );
@@ -79,7 +82,10 @@ export function PhoneNumberInput({ eventId }: { eventId: number }) {
       </button>
       <div>
         {successMsg ? (
-          <p className="mt-2 text-sm text-red-600">{successMsg}</p>
+          <p className="mt-2 text-sm text-green-600">{successMsg}</p>
+        ) : null}
+        {errorMsg ? (
+          <p className="mt-2 text-sm text-red-600">{errorMsg}</p>
         ) : null}
       </div>
     </div>

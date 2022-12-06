@@ -1,5 +1,7 @@
 import { TRPCError } from "@trpc/server";
+import { Twilio } from "twilio";
 import { z } from "zod";
+import { env } from "../../../env/server.mjs";
 
 import { router, publicProcedure } from "../trpc";
 
@@ -46,11 +48,12 @@ export const eventRouter = router({
       z.object({
         eventId: z.number(),
         phoneNumber: z.string(),
+        datetime: z.date(),
       })
     )
     .mutation(async ({ input, ctx }) => {
       try {
-        await ctx.prisma.event.update({
+        const eventResult = await ctx.prisma.event.update({
           where: {
             id: input.eventId,
           },
@@ -60,10 +63,26 @@ export const eventRouter = router({
             },
           },
         });
+        const twilio = new Twilio(
+          env.TWILIO_ACCOUNT_SID,
+          env.TWILIO_AUTH_TOKEN
+        );
+
+        const messagingServiceSid = env.TWILIO_MESSAGING_SERVICE_SID;
+        await twilio.messages.create({
+          from: messagingServiceSid,
+          to: input.phoneNumber,
+          body: `${
+            eventResult.name
+          } is happening at ${input.datetime.toLocaleTimeString()}!!`,
+          scheduleType: "fixed",
+          sendAt: input.datetime,
+        });
       } catch (err) {
+        console.log(err);
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",
-          message: "Something went wrong",
+          message: `Something went wrong`,
         });
       }
     }),
