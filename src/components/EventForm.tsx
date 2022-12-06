@@ -86,7 +86,7 @@ export default function EventForm() {
             </div>
             <input
               type="date"
-              className="block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 text-orange-400 sm:text-sm"
+              className="block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 text-orange-400"
               value={date}
               onChange={(e) => setDate(e.target.value as string)}
             ></input>
