@@ -27,12 +27,16 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+        <h1 className="text-6xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           TextMeWhen<span className="text-orange-300">...</span>
         </h1>
-        <p className="text-2xl text-gray-700">
+        <p className="mb-2 text-xl text-gray-700 md:text-2xl">
           Scheduled Text Delivery and Opt-In Page Hosting
         </p>
+        <p className="text-m md:text-l mb-5 italic text-gray-700">
+          Version 1.0: Supports events min. 1hr/max. 7 days in future.
+        </p>
+
         <div>
           <EventForm />
         </div>
