@@ -27,9 +27,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
         {
           onSuccess: () => {
             setErrorMsg("");
-            setSuccessMsg(
-              `Your phone number has been added to the event! You will receive a text message when the event starts.`
-            );
+            setSuccessMsg(`Your phone number has been added to the event!`);
           },
           onError: (error) => {
             setSuccessMsg("");
@@ -66,7 +64,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
           id="phone-number"
           value={phoneNumber}
           onChange={handlePhoneNumberChange}
-          className="block w-full rounded-md border-gray-300 pl-16 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="block w-full rounded-md border border-orange-300 bg-orange-50 pl-16 text-orange-400 focus:border-orange-400 focus:ring-orange-500 sm:text-sm"
           placeholder="555-987-6543"
         />
       </div>

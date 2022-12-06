@@ -18,11 +18,18 @@ function EventData({ id }: { id: number }) {
 
   return (
     <section className="flex flex-col justify-center rounded border-2 border-gray-500 p-6 shadow-xl duration-500 motion-safe:hover:scale-105">
-      <h2 className="flex flex-row justify-center text-lg text-gray-700">
+      <h2 className="mt-2 flex flex-row justify-center text-lg text-gray-700">
         Attending {event.name}?
       </h2>
+
+      <p className="flex flex-row justify-center text-sm italic text-gray-600">
+        Date: {event.date}
+      </p>
+      <p className="mb-2 flex flex-row justify-center text-sm italic text-gray-600">
+        Time: {event.time}
+      </p>
       <p className="flex flex-row justify-center text-sm text-gray-600">
-        {event.date} at {event.time}
+        Get a text reminder when the event starts!
       </p>
       <div className="flex flex-row justify-center">
         <PhoneNumberInput event={event} />
