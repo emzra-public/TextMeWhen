@@ -52,7 +52,7 @@ export default function EventForm() {
     <>
       <div className="flex flex-col items-center justify-center">
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-orange-400">
             Event Name
           </label>
           <input
@@ -60,6 +60,7 @@ export default function EventForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            className="border border-orange-300 bg-orange-50"
           ></input>
           {nameError && (
             <p className="mt-2 text-sm text-red-600">{nameError}</p>
@@ -85,7 +86,7 @@ export default function EventForm() {
             </div>
             <input
               type="date"
-              className="text-white-900 block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 sm:text-sm"
+              className="block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 text-orange-400 sm:text-sm"
               value={date}
               onChange={(e) => setDate(e.target.value as string)}
             ></input>
@@ -94,7 +95,7 @@ export default function EventForm() {
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-orange-400">
               Event Time:
             </label>
             <input
@@ -102,6 +103,7 @@ export default function EventForm() {
               value={time}
               onChange={(e) => setTime(e.target.value as string)}
               required
+              className="border border-orange-300 bg-orange-50 text-orange-400"
             ></input>
             {timeError && (
               <p className="mt-2 text-sm text-red-600">{timeError}</p>
