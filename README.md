@@ -4,18 +4,27 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 
 ## Tech Stack
 
-React.js, Next.js Framework, Typescript, TRPC, Prisma, Railway, Tailwind CSS
+- [React.js](https://reactjs.org/)
+- [Next-Auth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [TailwindCSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
 
 ### Other
 
-Twilio API, Vercel
+- [Twilio API](https://www.twilio.com/docs)
+- [Vercel](https://vercel.com)
+- [Railway](https://railway.app)
 
 ### Team 
 Lead Dev: EmalineG
 
 ### From EmalineG:
 
-Thank you to the BigDummyInitiative community for your encouragement with this project and allowing me to brainstorm ideas with you. A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616.
+Version 1.0 schedules texts to send at the time of event and only supports events at least 1 hour and at max 7 days in the future.
 
+Upcoming Features: Custom messages, reminder text in advance of event, more than 1 scheduled message, user accounts to manage attendee list & replies, rollbar error logging, WhatsApp integration.
+
+Thank you to the BigDummyInitiative community for your encouragement with this project and allowing me to brainstorm ideas with you. A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616.
 
 
