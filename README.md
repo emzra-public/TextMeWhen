@@ -12,5 +12,8 @@ Prisma
 Railway
 Tailwind CSS
 
+## Other
+Twilio API
+Vercel
 
 
