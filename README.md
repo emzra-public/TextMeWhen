@@ -9,6 +9,7 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 - [Prisma](https://prisma.io)
 - [TailwindCSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
+- [HeadlessUI](https://headlessui.com/)
 
 ### Other
 
