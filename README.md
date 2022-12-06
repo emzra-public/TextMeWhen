@@ -16,7 +16,7 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 - [Vercel](https://vercel.com)
 - [Railway](https://railway.app)
 
-### Team 
+## Team 
 Lead Dev: EmalineG
 
 ### From EmalineG:
