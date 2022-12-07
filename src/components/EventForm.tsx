@@ -1,5 +1,4 @@
-import { sendEtagResponse } from "next/dist/server/send-payload";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { trpc } from "../utils/trpc";
 
 export default function EventForm() {
@@ -29,7 +28,7 @@ export default function EventForm() {
               `Your event page has been created! You can find it at https://textmewhen.vercel.app/${data.id}`
             );
           },
-          onError: (error) => {
+          onError: () => {
             setSuccessMsg("");
             setErrorMsg("There was an error. Please try again.");
           },
@@ -101,7 +100,10 @@ export default function EventForm() {
             <input
               type="time"
               value={time}
-              onChange={(e) => setTime(e.target.value as string)}
+              onChange={(e) => {
+                setTime(e.target.value as string);
+                console.log(e.target.value);
+              }}
               required
               className="border border-orange-300 bg-orange-50 text-orange-400"
             ></input>
