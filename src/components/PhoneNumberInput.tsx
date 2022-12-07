@@ -65,7 +65,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
           value={phoneNumber}
           onChange={handlePhoneNumberChange}
           className="block w-full rounded-md border border-orange-300 bg-orange-50 pl-16 text-orange-400 focus:border-orange-400 focus:ring-orange-500 sm:text-sm"
-          placeholder="555-987-6543"
+          placeholder="5559876543"
         />
       </div>
       <div>
