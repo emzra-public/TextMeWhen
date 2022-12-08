@@ -23,10 +23,10 @@ function EventData({ id }: { id: number }) {
       </h2>
 
       <p className="flex flex-row justify-center text-sm italic text-gray-600">
-        Date: {event.date}
+        Date: {event.date.toLocaleDateString()}
       </p>
       <p className="mb-2 flex flex-row justify-center text-sm italic text-gray-600">
-        Time: {event.time}
+        Time: {event.date.toLocaleTimeString()}
       </p>
       <p className="flex flex-row justify-center text-sm text-gray-600">
         Get a text reminder when the event starts!

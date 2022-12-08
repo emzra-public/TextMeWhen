@@ -67,8 +67,7 @@ model VerificationToken {
 
 model Event {
   id           Int      @id @default(autoincrement())
-  time         String
-  date         String
+  date         DateTime
   name         String
   phoneNumbers String[]
 }
