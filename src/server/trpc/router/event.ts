@@ -45,7 +45,9 @@ export const eventRouter = router({
     .input(
       z.object({
         eventId: z.number(),
-        phoneNumber: z.string(),
+        phoneNumber: z
+          .string()
+          .length(10, { message: "Phone number must be 10 digits" }),
         datetime: z.date(),
       })
     )
