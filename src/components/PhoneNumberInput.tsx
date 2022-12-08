@@ -17,11 +17,12 @@ export function PhoneNumberInput({ event }: { event: Event }) {
     if (phoneNumber.length === 10 && !isNaN(Number(phoneNumber))) {
       console.log("phoneNumber", phoneNumber);
       setPhoneNumberError("");
+
       phoneNumberMutator.mutate(
         {
           phoneNumber,
           eventId: event.id,
-          datetime: new Date(event.date + " " + event.time),
+          datetime: event.date,
         },
 
         {

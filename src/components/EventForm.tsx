@@ -15,11 +15,12 @@ export default function EventForm() {
   const handleEventSubmit = (e: any) => {
     if (name.length > 0 && date.length > 0 && time.length > 0) {
       setNameError("");
+      const eventDate = new Date(date + " " + time);
+
       eventMutator.mutateAsync(
         {
           name: name,
-          date: date,
-          time: time,
+          date: eventDate,
         },
         {
           onSuccess: (data) => {

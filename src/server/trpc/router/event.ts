@@ -10,8 +10,7 @@ export const eventRouter = router({
     .input(
       z.object({
         name: z.string(),
-        date: z.string(),
-        time: z.string(),
+        date: z.date(),
       })
     )
     .mutation(async ({ input, ctx }) => {
@@ -19,7 +18,6 @@ export const eventRouter = router({
         data: {
           name: input.name,
           date: input.date,
-          time: input.time,
         },
       });
     }),
