@@ -37,7 +37,7 @@ const Home: NextPage = () => {
             Scheduled Text Delivery and Opt-In Page Hosting
           </p>
           <p className="text-m sm:text-l mb-5 italic text-gray-700">
-            Version 1.0: Supports events min. 1hr/max. 7 days in future.
+            Version 1.0: Supports events min. 1hr & max. 7 days in future.
           </p>
 
           <div>
