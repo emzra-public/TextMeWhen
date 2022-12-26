@@ -32,7 +32,9 @@ export function PhoneNumberInput({ event }: { event: Event }) {
           },
           onError: (error) => {
             setSuccessMsg("");
-            setErrorMsg("There was an error. Please try again.");
+            setErrorMsg(
+              "Error: If event is happening in less than 1 hr, you can't add your number."
+            );
           },
         }
       );
