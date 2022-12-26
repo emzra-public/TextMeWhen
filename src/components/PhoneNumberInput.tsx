@@ -33,7 +33,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
           onError: (error) => {
             setSuccessMsg("");
             setErrorMsg(
-              "Error: If event is happening in less than 1 hr, you can't add your number."
+              "Error: If event is happening in less than 1 hr or is more than 7 days away, you can't add your number."
             );
           },
         }
