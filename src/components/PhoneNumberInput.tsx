@@ -39,7 +39,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
         }
       );
       setPhoneNumber("");
-      console.log(phoneNumber);
+      console.log(phoneNumber, event.date);
     } else {
       setPhoneNumberError("Please enter a valid phone number");
     }
