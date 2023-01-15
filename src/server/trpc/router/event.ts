@@ -74,7 +74,7 @@ export const eventRouter = router({
           to: input.phoneNumber,
           body: `${
             eventResult.name
-          } is happening at ${input.datetime.toISOString()}!!`,
+          } is happening at ${input.datetime}!!`,
           scheduleType: "fixed",
           sendAt: input.datetime,
         });
