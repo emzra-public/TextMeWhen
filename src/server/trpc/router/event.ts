@@ -24,7 +24,7 @@ export const eventRouter = router({
   getEventData: publicProcedure
     .input(
       z.object({
-        id: z.number(),
+        id: z.string(),
       })
     )
     .query(async ({ ctx, input }) => {
@@ -41,10 +41,11 @@ export const eventRouter = router({
         });
       }
     }),
+
   createNumberData: publicProcedure
     .input(
       z.object({
-        eventId: z.number(),
+        eventId: z.string(),
         phoneNumber: z
           .string()
           .length(10, { message: "Phone number must be 10 digits" }),

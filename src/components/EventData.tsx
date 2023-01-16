@@ -1,7 +1,7 @@
 import { trpc } from "../utils/trpc";
 import { PhoneNumberInput } from "./PhoneNumberInput";
 
-function EventData({ id }: { id: number }) {
+function EventData({ id }: { id: string }) {
   const { data: event, isLoading } = trpc.event.getEventData.useQuery(
     { id },
     {
