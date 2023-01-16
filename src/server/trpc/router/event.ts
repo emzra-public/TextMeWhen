@@ -74,7 +74,7 @@ export const eventRouter = router({
           to: input.phoneNumber,
           body: `${
             eventResult.name
-          } is happening at ${input.datetime} ${input.datetime.getTimezoneOffset}!!`,
+          } is happening now!`,
           scheduleType: "fixed",
           sendAt: input.datetime,
         });
