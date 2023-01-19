@@ -15,8 +15,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid-template-columns-1fr3fr grid-auto-flow-column grid gap-2">
-        <div className="sm: float-left">
+      <div className="grid-template-columns-1fr3fr grid gap-2">
+    
         <main className="container mx-auto flex flex-col items-center justify-center p-10">
           <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-[5rem]">
             TextMeWhen<span className="text-orange-300">...</span>
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
           </div>
           <p className="text-gray-700"></p>
         </main>
-        </div>
+   
       </div>
       <Notif />
     </>
