@@ -2,11 +2,11 @@ import { useState } from "react";
 import { trpc } from "../utils/trpc";
 
 export default function EventForm() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState("The Hypest Event Ever");
   const [nameError, setNameError] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("2023-01-18");
   const [dateError, setDateError] = useState("");
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState("00:00");
   const [timeError, setTimeError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,9 +36,9 @@ export default function EventForm() {
         }
       );
 
-      setName("");
-      setDate("");
-      setTime("");
+      setName("The Hypest Event Ever");
+      setDate("??/??/????");
+      setTime("00:00");
     } else if (name.length === 0) {
       setNameError("Please enter a name for your event");
     } else if (date.length === 0) {
@@ -60,7 +60,7 @@ export default function EventForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="border border-orange-300 bg-orange-50"
+            className="border border-orange-300 text-orange-400 bg-orange-50"
           ></input>
           {nameError && (
             <p className="mt-2 text-sm text-red-600">{nameError}</p>
@@ -86,10 +86,9 @@ export default function EventForm() {
             </div>
             <input
               type="date"
-              className="block w-full rounded-lg border placeholder-orange-400 border-orange-300 bg-orange-50 p-2.5 pl-10 text-orange-400"
+              className="block w-full rounded-lg border border-orange-300 bg-orange-50 p-2.5 pl-10 text-orange-400"
               value={date}
               onChange={(e) => setDate(e.target.value as string)}
-              placeholder = "??/??/????"
               required
             ></input>
             {dateError && (
@@ -107,9 +106,8 @@ export default function EventForm() {
                 setTime(e.target.value as string);
                 console.log(e.target.value);
               }}
-              placeholder = "00:00"
               required
-              className="border border-orange-300 bg-orange-50 placeholder-orange-400 text-orange-400"
+              className="border border-orange-300 bg-orange-50 text-orange-400"
             ></input>
             {timeError && (
               <p className="mt-2 text-sm text-red-600">{timeError}</p>
