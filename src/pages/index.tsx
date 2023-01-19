@@ -3,18 +3,6 @@ import Head from "next/head";
 import EventForm from "../components/EventForm";
 import Notif from "../components/Notif";
 
-// make api requests:
-// export default function IndexPage() {
-//   const hello = trpc.hello.useQuery({ text: 'client' });
-//   if (!hello.data) {
-//     return <div>Loading...</div>;
-//   }
-//   return (
-//     <div>
-//       <p>{hello.data.greeting}</p>
-//     </div>
-//   );
-// }
 const Home: NextPage = () => {
   return (
     <>
