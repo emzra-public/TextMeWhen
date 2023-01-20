@@ -2,11 +2,11 @@ import { useState } from "react";
 import { trpc } from "../utils/trpc";
 
 export default function EventForm() {
-  const [name, setName] = useState("The Hypest Event Ever");
+  const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
-  const [date, setDate] = useState("2023-01-18");
+  const [date, setDate] = useState("");
   const [dateError, setDateError] = useState("");
-  const [time, setTime] = useState("00:00");
+  const [time, setTime] = useState("");
   const [timeError, setTimeError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,9 +36,9 @@ export default function EventForm() {
         }
       );
 
-      setName("The Hypest Event Ever");
-      setDate("??/??/????");
-      setTime("00:00");
+      setName("");
+      setDate("");
+      setTime("");
     } else if (name.length === 0) {
       setNameError("Please enter a name for your event");
     } else if (date.length === 0) {
