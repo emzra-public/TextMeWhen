@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid-template-columns-1fr3fr sm:grid-template-columns-1fr grid">
+      <div className="grid-template-columns-1fr grid">
     
         <main className="container mx-auto flex flex-col items-center justify-center p-10">
           <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-[5rem]">
