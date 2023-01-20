@@ -29,4 +29,6 @@ Upcoming Features: Custom messages, reminder text in advance of event, more than
 
 Thank you to the BigDummyInitiative community for your encouragement with this project and allowing me to brainstorm ideas with you. A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616.
 
+## Version Updates
 
+Version 1.1 - Changed dynamic URLs to randomized numbers instead of incrementing value; Replaced time variable in text message to "now" for universality in regard to time zones; Removed excess padding on sides for mobile to improve UI/UX; Reformatted text content for mobile to improve UI/UX.
