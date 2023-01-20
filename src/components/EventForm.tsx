@@ -60,7 +60,7 @@ export default function EventForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="border border-orange-300 text-orange-400 bg-orange-50"
+            className="border block w-full border-orange-300 text-orange-400 bg-orange-50"
           ></input>
           {nameError && (
             <p className="mt-2 text-sm text-center text-red-600">{nameError}</p>
@@ -107,7 +107,7 @@ export default function EventForm() {
                 console.log(e.target.value);
               }}
               required
-              className="border border-orange-300 bg-orange-50 text-orange-400"
+              className="border block w-full border-orange-300 bg-orange-50 text-orange-400"
             ></input>
             {timeError && (
               <p className="mt-2 text-sm text-center text-red-600">{timeError}</p>
