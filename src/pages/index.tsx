@@ -17,8 +17,8 @@ const Home: NextPage = () => {
 
       <div className="grid-template-columns-1fr grid">
     
-        <main className="container mx-auto flex flex-col items-center justify-center pt-10 pl-4 pr-4">
-          <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-[5rem]">
+        <main className="container mx-auto flex flex-col items-center justify-center pt-10 pl-2 pr-2">
+          <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-xl">
             TextMeWhen<span className="text-orange-300">...</span>
           </h1>
           <p className="mb-2 text-xl text-gray-700 text-center sm:text-xl">
