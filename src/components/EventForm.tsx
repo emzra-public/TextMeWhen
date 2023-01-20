@@ -63,7 +63,7 @@ export default function EventForm() {
             className="border border-orange-300 text-orange-400 bg-orange-50"
           ></input>
           {nameError && (
-            <p className="mt-2 text-sm text-red-600">{nameError}</p>
+            <p className="mt-2 text-sm text-center text-red-600">{nameError}</p>
           )}
         </div>
 
@@ -92,7 +92,7 @@ export default function EventForm() {
               required
             ></input>
             {dateError && (
-              <p className="mt-2 text-sm text-red-600">{dateError}</p>
+              <p className="mt-2 text-center text-sm text-red-600">{dateError}</p>
             )}
           </div>
           <div>
@@ -110,7 +110,7 @@ export default function EventForm() {
               className="border border-orange-300 bg-orange-50 text-orange-400"
             ></input>
             {timeError && (
-              <p className="mt-2 text-sm text-red-600">{timeError}</p>
+              <p className="mt-2 text-sm text-center text-red-600">{timeError}</p>
             )}
           </div>
           <div>
@@ -125,9 +125,9 @@ export default function EventForm() {
         </div>
         <div>
           {successMsg && (
-            <p className="mt-2 text-sm text-green-600">{successMsg}</p>
+            <p className="mt-2 text-sm text-center text-green-600">{successMsg}</p>
           )}
-          {errorMsg && <p className="mt-2 text-sm text-red-600">{errorMsg}</p>}
+          {errorMsg && <p className="mt-2 text-center text-sm text-red-600">{errorMsg}</p>}
         </div>
       </div>
     </>
