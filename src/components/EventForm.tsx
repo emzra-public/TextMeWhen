@@ -26,7 +26,7 @@ export default function EventForm() {
           onSuccess: (data) => {
             setErrorMsg("");
             setSuccessMsg(
-              `Your event page has been created! You can find it at https://textmewhen.vercel.app/${data.id}`
+              `Your event page has been created! You can find it at https://textmewhen.club/${data.id}`
             );
           },
           onError: () => {
