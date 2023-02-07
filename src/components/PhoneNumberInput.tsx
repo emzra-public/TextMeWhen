@@ -10,7 +10,7 @@ export function PhoneNumberInput({ event }: { event: Event }) {
   const phoneNumberMutator = trpc.event.createNumberData.useMutation();
 
   const handlePhoneNumberChange = (e: any) => {
-    setPhoneNumber(e.target.value);
+    setPhoneNumber(e.target.value.replace(/\D/g, ""));
   };
 
   const handlePhoneNumberSubmit = () => {
