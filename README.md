@@ -27,7 +27,7 @@ Version 1.0 schedules texts to send at the time of event and only supports event
 
 Upcoming Features: Custom messages, reminder text in advance of event, more than 1 scheduled message, user accounts to manage attendee list & replies, rollbar error logging, WhatsApp integration.
 
-Thank you to the BigDummyInitiative community for your encouragement with this project and allowing me to brainstorm ideas with you. A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616.
+Thank you to the CTRLSHIFTCOLLAB community for your encouragement with this project and allowing me to brainstorm ideas with you. A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616.
 
 ## Version Updates
 
