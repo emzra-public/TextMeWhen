@@ -12,13 +12,11 @@ export default function Notif() {
 
   return (
     <>
-      
       <div
         aria-live="assertive"
         className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
       >
         <div className="flex w-full flex-col items-center space-y-4 sm:items-start">
-          
           <Transition
             show={show}
             as={Fragment}
@@ -39,13 +37,13 @@ export default function Notif() {
                     <p className="mt-1 text-sm text-gray-500">
                       Join the{" "}
                       <a
-                        href="https://discord.gg/f3kUWKY3zA"
+                        href="https://discord.gg/zNRTqUx6EX"
                         target="_blank"
                         rel="noreferrer"
                       >
                         {" "}
                         <span className="text-blue-800">
-                          BigDummyInitiative Discord Server{" "}
+                          CTRLSHIFTCOLLAB Discord Server{" "}
                         </span>
                       </a>{" "}
                       for real-time updates!
