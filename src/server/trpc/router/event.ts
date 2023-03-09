@@ -23,8 +23,8 @@ export const eventRouter = router({
         },
       });
     }),
-    // get event data by id (context of id is passed in automatically)
-    // throws an error if the event is not found
+// get event data by id (context of id is passed in automatically)
+// throws an error if the event is not found
   getEventData: publicProcedure
     .input(
       z.object({
