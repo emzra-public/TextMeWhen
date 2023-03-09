@@ -4,7 +4,9 @@ import { z } from "zod";
 import { env } from "../../../env/server.mjs";
 
 import { router, publicProcedure } from "../trpc";
-
+// router for event related routes
+// input validation is done using zod
+// each route determines the input which will then be passed to the mutation/query
 export const eventRouter = router({
   createEventData: publicProcedure
     .input(
@@ -73,9 +75,7 @@ export const eventRouter = router({
         await twilio.messages.create({
           from: messagingServiceSid,
           to: input.phoneNumber,
-          body: `${
-            eventResult.name
-          } is happening now!`,
+          body: `${eventResult.name} is happening now!`,
           scheduleType: "fixed",
           sendAt: input.datetime,
         });
