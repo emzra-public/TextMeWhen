@@ -47,7 +47,7 @@ export const eventRouter = router({
     }),
 
   createNumberData: publicProcedure
-    // collects the event id, phone number, and datetime
+    // Collects the event id, phone number, and datetime
     .input(
       z.object({
         eventId: z.string(),
