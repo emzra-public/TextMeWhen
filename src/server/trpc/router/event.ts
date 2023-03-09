@@ -47,6 +47,7 @@ export const eventRouter = router({
     }),
 
   createNumberData: publicProcedure
+    // collects the event id, phone number, and datetime
     .input(
       z.object({
         eventId: z.string(),
@@ -56,6 +57,7 @@ export const eventRouter = router({
         datetime: z.date(),
       })
     )
+    // The phone number is saved to the DB under the event ID in context
     .mutation(async ({ input, ctx }) => {
       try {
         const eventResult = await ctx.prisma.event.update({
@@ -68,11 +70,12 @@ export const eventRouter = router({
             },
           },
         });
+        // Initiating Twilio API with the credentials from the .env file
         const twilio = new Twilio(
           env.TWILIO_ACCOUNT_SID,
           env.TWILIO_AUTH_TOKEN
         );
-
+        // The input is then passed to the Twilio API to send a message to the phone number at the specified time
         const messagingServiceSid = env.TWILIO_MESSAGING_SERVICE_SID;
         await twilio.messages.create({
           from: messagingServiceSid,
@@ -81,6 +84,7 @@ export const eventRouter = router({
           scheduleType: "fixed",
           sendAt: input.datetime,
         });
+        // error handling
       } catch (err) {
         console.log(err);
         throw new TRPCError({
