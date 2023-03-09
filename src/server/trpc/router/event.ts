@@ -23,8 +23,8 @@ export const eventRouter = router({
         },
       });
     }),
-// get event data by id (context of id is passed in automatically)
-// throws an error if the event is not found
+  // queries for event data by id (context of id is passed in automatically)
+  // throws an error if the event is not found
   getEventData: publicProcedure
     .input(
       z.object({
@@ -77,9 +77,7 @@ export const eventRouter = router({
         await twilio.messages.create({
           from: messagingServiceSid,
           to: input.phoneNumber,
-          body: `${
-            eventResult.name
-          } is happening now!`,
+          body: `${eventResult.name} is happening now!`,
           scheduleType: "fixed",
           sendAt: input.datetime,
         });
