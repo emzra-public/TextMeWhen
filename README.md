@@ -19,7 +19,7 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 - [Railway](https://railway.app)
 
 ### App Flow
-- https://imgur.com/a/WMEXA9g
+- https://imgur.com/a/DoddxiQ
 
 ## Team 
 Lead Dev: EmalineG
