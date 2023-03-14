@@ -1,7 +1,6 @@
 # TextMeWhen
 
 Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by user.
-App flow: https://imgur.com/a/WMEXA9g
 
 ## Tech Stack
 
@@ -18,6 +17,9 @@ App flow: https://imgur.com/a/WMEXA9g
 - [Twilio API](https://www.twilio.com/docs)
 - [Vercel](https://vercel.com)
 - [Railway](https://railway.app)
+
+### App Flow
+- https://imgur.com/a/WMEXA9g
 
 ## Team 
 Lead Dev: EmalineG
