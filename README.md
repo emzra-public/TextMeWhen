@@ -1,6 +1,7 @@
 # TextMeWhen
 
 Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by user.
+App flow: https://imgur.com/a/WMEXA9g
 
 ## Tech Stack
 
