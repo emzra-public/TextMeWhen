@@ -5,7 +5,7 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 ## Tech Stack
 
 - [React.js](https://reactjs.org/)
-- [Next-Auth.js](https://next-auth.js.org)
+- [Next.js](https://nextjs.org)
 - [Prisma](https://prisma.io)
 - [TailwindCSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
