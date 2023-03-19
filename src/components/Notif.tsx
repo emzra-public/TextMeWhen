@@ -43,7 +43,7 @@ export default function Notif() {
                       >
                         {" "}
                         <span className="text-blue-800">
-                          emzra's notepad{" "}
+                          emzra`&apos;`s notepad{" "}
                         </span>
                       </a>{" "}
                       for real-time updates!
