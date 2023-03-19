@@ -35,7 +35,7 @@ export default function Notif() {
                       New Features Coming Soon!
                     </p>
                     <p className="mt-1 text-sm text-gray-500">
-                      Join the{" "}
+                      Join {" "}
                       <a
                         href="https://discord.gg/zNRTqUx6EX"
                         target="_blank"
@@ -43,7 +43,7 @@ export default function Notif() {
                       >
                         {" "}
                         <span className="text-blue-800">
-                          CTRLSHIFTCOLLAB Discord Server{" "}
+                          emzra's notepad{" "}
                         </span>
                       </a>{" "}
                       for real-time updates!
