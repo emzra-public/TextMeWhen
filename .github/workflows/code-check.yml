@@ -2,6 +2,17 @@ name: Code check
 
 on: [push, pull_request]
 
+env:
+  DATABASE_URL: "https://fake.com"
+  NEXTAUTH_SECRET: "secret"
+  NEXTAUTH_URL: "https://fake.com"
+  DISCORD_CLIENT_ID: "client_id"
+  DISCORD_CLIENT_SECRET: "client_secret"
+  TWILIO_ACCOUNT_SID: "account_sid"
+  TWILIO_AUTH_TOKEN: "auth_token"
+  TWILIO_NUMBER: "number"
+  TWILIO_MESSAGING_SERVICE_SID: "messaging_service_sid"
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -40,6 +51,9 @@ jobs:
         run: pnpm install
 
       - run: pnpm lint
+
+      - name: Print Environment Variable
+        run: echo $MY_ENV_VAR
 
   tsc:
     runs-on: ubuntu-latest
