@@ -31,7 +31,7 @@ export default function EventForm() {
           },
           onError: () => {
             setSuccessMsg("");
-            setErrorMsg("There was an error. Please try again.");
+            setErrorMsg("MY DATABASE IS BROKEN BC I HAVENT TOUCHED THIS IN 2 YEARS.");
           },
         }
       );
