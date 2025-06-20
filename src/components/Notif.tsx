@@ -46,7 +46,7 @@ export default function Notif() {
                           emzra&apos;s notepad{" "}
                         </span>
                       </a>{" "}
-                      for real-time updates! (hi its me 2 years later idk if there will ever be updates we will see)
+                      for real-time updates!
                     </p>
                   </div>
                   <div className="ml-4 flex flex-shrink-0">
