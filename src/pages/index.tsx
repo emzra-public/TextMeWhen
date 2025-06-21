@@ -7,7 +7,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <Image src="/tmw-logo.png" alt="TextMeWhen Logo" width={100} height={100} />
         <title>TextMeWhen</title>
         <meta
           name="description"
@@ -19,6 +18,7 @@ const Home: NextPage = () => {
       <div className="grid-template-columns-1fr grid">
     
         <main className="container mx-auto flex flex-col items-center justify-center pt-10">
+          <Image src="/tmw-logo.png" alt="TextMeWhen Logo" width={100} height={100} />
           <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-[4rem]">
             TextMeWhen<span className="text-orange-300">...</span>
           </h1>
