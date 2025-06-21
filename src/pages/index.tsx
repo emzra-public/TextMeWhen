@@ -7,6 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
+        <Image src="/tmw-logo.png" alt="TextMeWhen Logo" width={100} height={100} />
         <title>TextMeWhen</title>
         <meta
           name="description"
