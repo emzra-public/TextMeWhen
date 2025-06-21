@@ -19,10 +19,12 @@ const Home: NextPage = () => {
       <div className="grid-template-columns-1fr grid">
     
         <main className="container mx-auto flex flex-col items-center justify-center pt-10">
+          <div className="flex flex-col items-center justify-center">
           <Image src="/tmw-logo.png" alt="TextMeWhen Logo" width={200} height={200} />
           <h1 className="text-6xl font-extrabold leading-normal text-gray-700 sm:text-[4rem]">
             TextMeWhen<span className="text-orange-300">...</span>
           </h1>
+          </div>
           <p className="mb-2 text-xl text-gray-700 text-center sm:text-xl">
             Scheduled Text Delivery and Opt-In Page Hosting
           </p>
