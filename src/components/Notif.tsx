@@ -34,20 +34,14 @@ export default function Notif() {
                     <p className="text-sm font-medium text-gray-900">
                       New Features Coming Soon!
                     </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                      Join {" "}
-                      <a
-                        href="https://discord.gg/zNRTqUx6EX"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {" "}
-                        <span className="text-blue-800">
-                          emzra&apos;s notepad{" "}
-                        </span>
-                      </a>{" "}
-                      for real-time updates!
-                    </p>
+                    <ul className="mt-1 text-sm text-gray-500 space-y-1">
+                      <li>- Custom messages</li>
+                      <li>- Reminder text in advance of event</li>
+                      <li>- More than 1 scheduled message</li>
+                      <li>- User accounts to manage attendee list & replies</li>
+                      <li>- Rollbar error logging</li>
+                      <li>- WhatsApp integration</li>
+                    </ul>
                   </div>
                   <div className="ml-4 flex flex-shrink-0">
                     <button
