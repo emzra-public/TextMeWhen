@@ -18,10 +18,6 @@ Scheduled Text Delivery by Opt-In, Custom Opt-In Page for each event pushed by u
 - [Vercel](https://vercel.com)
 - [Neon](https://neon.tech)
 
-Version 1.0 schedules texts to send at the time of event and only supports events at least 1 hour and at max 7 days in the future. Message sent reads, "[event name] is happening at [event time]!"
-
-Upcoming Features: Custom messages, reminder text in advance of event, more than 1 scheduled message, user accounts to manage attendee list & replies, rollbar error logging, WhatsApp integration.
-
 A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616 for letting me brainstorm ideas with you.
 
 ## Version Updates
