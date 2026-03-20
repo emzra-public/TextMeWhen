@@ -26,4 +26,8 @@ A special thanks to Cloud#6969, Prath#9580, lilintech#1668, and kai_11#4616 for 
 
 ## Version Updates
 
-Version 1.1 - Changed dynamic URLs to randomized numbers instead of incrementing value; Replaced time variable in text message to "now" for universality in regard to time zones; Removed excess padding on sides for mobile to improve UI/UX; Reformatted text content for mobile to improve UI/UX.
+**v1.1**
+- Changed dynamic URLs to randomized IDs instead of incrementing values
+- Replaced time variable in text message to "now" for timezone universality
+- Removed excess padding on mobile to improve UI/UX
+- Reformatted text content for mobile
